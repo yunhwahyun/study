@@ -1,11 +1,12 @@
 # print("Hello, World!")
+# Python 구문 블럭은 들여쓰기 기준으로 구분됨.
 
 user_input = input("이름을 입력하세요: ")
 print("안녕하세요, " + user_input + "님!")
 
 # If-else
 user_input = input("나이를 입력하세요: ")
-if user_input.isdigit():
+if user_input.isdigit(): # isdigit() 숫자인지 확인하는 메서드 (전각숫자 포함. 0-9 사이의 문자열인지 확인)
     age = int(user_input)
     print("성인" if age >= 20 else "미성년자")
     if age < 20:
@@ -27,7 +28,7 @@ if not is_logged_in:
     print("로그인이 필요합니다.")
 
 # for
-for i in range(5):
+for i in range(5): # range(5)는 0부터 4까지의 숫자를 생성
     print("i =", i)
 
 # while

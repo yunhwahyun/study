@@ -42,6 +42,12 @@ Network Trash Folder
 Temporary Items
 .apdisk
 
+# vscode
+/.vscode/
+.vscode/*
+/.history/
+.history/*
+
 
 # Python
 venv/
