@@ -26,65 +26,65 @@ middle_font = pygame.font.SysFont('arial', MIDDLE_FONT_SIZE, bold=True)
 large_font = pygame.font.SysFont('arial', LARGE_FONT_SIZE, bold=True)
 
 # 게임에서 사용할 색상 정의
-SCREEN_BACKGROUND = (50, 44, 187)   # 화면 배경색
-EMPTY_CELL = (0, 0, 0)              # 빈 셀 색상
-GAME_BACKGROUND_TOP = (50, 44, 187)   # 게임 배경색 상단
+SCREEN_BACKGROUND = (50, 44, 187)        # 화면 배경색
+EMPTY_CELL = (0, 0, 0)                   # 빈 셀 색상
+GAME_BACKGROUND_TOP = (50, 44, 187)      # 게임 배경색 상단
 GAME_BACKGROUND_BOTTOM = (46, 95, 216)   # 게임 배경색 하단
-GAME_BORDER = (50, 44, 187)         # 테두리색
-INFO_BACKGROUND = (36, 44, 84)      # 정보 영역 배경색
-INFO_BORDER = (36, 44, 84)         # 정보 영역 테두리색
-PREVIEW_BACKGROUND = (0, 0, 0)   # 미리보기 배경색
-PREVIEW_BORDER = (0, 0, 0)   # 미리보기 테두리색
-WHITE = (255, 255, 255)             # 텍스트 색상
-GUIDE_COLOR = (255, 255, 255, 40)  # 가이드 블록 색상 (반투명 흰색)
-YELLOW = (255, 187, 2)              # 보너스 텍스트 색상
-RED = (222, 76, 69)                 # 패널티 텍스트 색상
+GAME_BORDER = (50, 44, 187)              # 테두리색
+INFO_BACKGROUND = (36, 44, 84)           # 정보 영역 배경색
+INFO_BORDER = (36, 44, 84)               # 정보 영역 테두리색
+PREVIEW_BACKGROUND = (0, 0, 0)           # 미리보기 배경색
+PREVIEW_BORDER = (0, 0, 0)               # 미리보기 테두리색
+WHITE = (255, 255, 255)                  # 텍스트 색상
+GUIDE_COLOR = (255, 255, 255, 40)        # 가이드 블록 색상 (반투명 흰색)
+YELLOW = (255, 187, 2)                   # 보너스 텍스트 색상
+RED = (222, 76, 69)                      # 패널티 텍스트 색상
 
 # 테트리스 블록 정의 (모양과 색상을 함께 정의)
 TETROMINOES = {
     'I': {
         'shape': [[1, 1, 1, 1]],  # I 블록: 파란색 긴 막대
-        'color': (77, 113, 255)    # Blue
+        'color': (0, 153, 255)    # Blue
     },
     'T': {
-        'shape': [[1, 1, 1],      # T 블록: 하늘색 T자
+        'shape': [[1, 1, 1],      # T 블록: 시안색 T자
                  [0, 1, 0]],
-        'color': (70, 207, 255)    # Sky Blue
+        'color': (0, 255, 102)    # Cyan Blue
     },
     'Z': {
-        'shape': [[1, 1, 0],      # Z 블록: 주황색 Z자
+        'shape': [[1, 1, 0],      # Z 블록: 진분홍색 Z자
                  [0, 1, 1]],
-        'color': (255, 130, 7)      # Orange
+        'color': (255, 0, 102)    # Hot Pink
     },
     'S': {
         'shape': [[0, 1, 1],      # S 블록: 보라색 S자
                  [1, 1, 0]],
-        'color': (149, 87, 230)      # Violet
+        'color': (153, 0, 255)    # Violet
     },
     'O': {
-        'shape': [[1, 1],         # O 블록: 녹색 정사각형
+        'shape': [[1, 1],         # O 블록: 하늘색 정사각형
                  [1, 1]],
-        'color': (63, 215, 48)    # Green
+        'color': (0, 204, 255)    # Sky Blue
     },
     'L': {
-        'shape': [[1, 1, 1],      # L 블록: 빨간색 L자
+        'shape': [[1, 1, 1],      # L 블록: 주황색 L자
                  [1, 0, 0]],
-        'color': (226, 45, 43)    # Red
+        'color': (255, 102, 0)    # Orange 1
     },
     'J': {
         'shape': [[1, 1, 1],      # J 블록: 노란색 J자
                  [0, 0, 1]],
-        'color': (255, 209, 48)      # Yellow
+        'color': (255, 255, 0)    # Yellow
     },
     'U': {
-        'shape': [[1, 0, 1],      # U 블록: 시안색 U자
+        'shape': [[1, 0, 1],      # U 블록: 주황색 U자
                  [1, 1, 1]],
-        'color': (77, 254, 169)      # Cyan
+        'color': (255, 153, 0)    # Orange 2
     },
     'V': {
-        'shape': [[1, 1],      # V 블록: 분홍색 V자
+        'shape': [[1, 1],         # V 블록: 분홍색 V자
                  [0, 1]],
-        'color': (255, 125, 244)      # Pink
+        'color': (255, 0, 255)    # Pink
     }
 }
 
@@ -97,17 +97,17 @@ GAME_STATE_COUNTDOWN = 'countdown'
 GAME_STATE_COMPLETED = 'completed'
 
 # 레벨 관련 상수
-LINES_PER_LEVEL = 10      # 레벨업에 필요한 줄 수
-MAX_LEVEL = 10            # 최대 레벨
-BONUS_MESSAGE_TIME = 2    # 보너스 메시지 표시 시간 (초)
-CLEAR_MESSAGE_TIME = 5    # 클리어 메시지 표시 시간 (초)
-SCORE_PER_LINE = 100      # 기본 줄당 점수
+LINES_PER_LEVEL = 10         # 레벨업에 필요한 줄 수
+MAX_LEVEL = 10               # 최대 레벨
+BONUS_MESSAGE_TIME = 2       # 보너스 메시지 표시 시간 (초)
+CLEAR_MESSAGE_TIME = 5       # 클리어 메시지 표시 시간 (초)
+SCORE_PER_LINE = 100         # 기본 줄당 점수
 SPEED_BONUS_MULTIPLIER = 10  # 시간 보너스 배율 (초당)
-PENALTY_MULTIPLIER = 2   # 시간 패널티 배율 (초당)
+PENALTY_MULTIPLIER = 2       # 시간 패널티 배율 (초당)
 
 # 레벨별 설정
 LEVEL_SETTINGS = {
-    1: {"drop_time": 1000, "target_time": 120},   # 1레벨: 기본 속도, 목표 120초
+    1: {"drop_time": 1000, "target_time": 120},  # 1레벨: 기본 속도, 목표 120초
     2: {"drop_time": 900, "target_time": 110},   # 2레벨: 110초
     3: {"drop_time": 800, "target_time": 100},   # 3레벨: 100초
     4: {"drop_time": 700, "target_time": 90},    # 4레벨: 90초
@@ -116,7 +116,7 @@ LEVEL_SETTINGS = {
     7: {"drop_time": 400, "target_time": 60},    # 7레벨: 60초
     8: {"drop_time": 300, "target_time": 50},    # 8레벨: 50초
     9: {"drop_time": 200, "target_time": 45},    # 9레벨: 45초
-    10: {"drop_time": 100, "target_time": 40}     # 10레벨: 최고 속도, 목표 40초
+    10: {"drop_time": 100, "target_time": 40}    # 10레벨: 최고 속도, 목표 40초
 }
 
 class Tetris:
